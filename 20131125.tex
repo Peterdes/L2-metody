@@ -1,0 +1,90 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill $\ell_2$-metody w~topologii: 25 listopada 2013\hfill}
+ 
+\begin{document}
+
+Pomijam trochę F\o{}lnerowskich rzeczy.
+
+\begin{definicja}
+	Istnieje kanoniczne przekształcenie
+	$\mr{can}^i: \bar{H}^i(Y) \to H^i(Y, \R)$,
+	$\varphi \mapsto \varphi(\cdot)(e)$.
+\end{definicja}
+
+\begin{lemat}[Cheegar - Gromov]
+	$Y$ spójny, wolny, kozwarty $G$-kompleks, 
+	$G$ nieskończona grupa średniowalna,
+	wówczas $\mr{can}^i : \bar{H}^i(Y) \to H^i(Y, \R)$
+	jest włożeniem.
+\end{lemat}
+
+\begin{uwaga}
+	Żeby mieć liczby Bettiego chcemy, aby $G$ była 
+	skończenie prezentowalna.
+	Dla powyższych założeń i~tak $G$ musi być skończenie generowana
+	(lemat Milnora-Schwartza).
+\end{uwaga}
+
+\begin{hipoteza}[Gromov]
+	Zredukowane $\ell_p$-kohomologie grupy średniowalnej znikają.
+\end{hipoteza}
+
+\begin{wniosek}
+	$X$ skończony, $\pi_1(X) = G$ średniowalna,
+	wówczas $\beta_1(X) = \beta_1(G) = 0$.
+\end{wniosek}
+
+\begin{stwierdzenie}
+	$X$ spójny kompleks o~skończonym $2$-szkielecie.
+	Wówczas $\beta_1(X) = \beta_1(\pi(X))$.
+\end{stwierdzenie}
+
+\begin{wniosek}
+	$\mb{F}_n$ nie jest średniowalna dla $n \geq 2$.
+\end{wniosek}
+
+\begin{twierdzenie}[Cheegar-Gromov]
+	$G$ skończenie prezentowalna, $|G|= \infty$, średniowalna,
+	wtedy $\beta_1(G) = 0$. Jeśli $G$ jest typu $F_m$,
+	to $\beta_i(G) = 0$ dla $i \leq m-1$.
+\end{twierdzenie}
+
+\begin{wniosek}
+	$G$ nieskończona średniowalna o~skończonej $K(G, 1)$,
+	wówczas $\chi(G) = 0$.
+\end{wniosek}
+
+{\bf Defekt grupy}
+
+Załóżmy, że $G$ posiada prezentację o~$g$ generatorach i~$r$ relacjach.
+
+\begin{definicja}
+	$\mr{def}(G) = \max \{ g - r \}$ -- maksimum po skończonych
+	prezentacjach.
+\end{definicja}
+
+\begin{fakt}
+	$\mr{def}(G) \leq b_1(G) - b_2(G)$
+	
+	$\mr{def}(G) = 1 - \beta_0(G) + \beta_1(G) - \beta_2(K(G, 1)^{(2)})$
+\end{fakt}
+
+\begin{wniosek}
+	$\mr{def}(G) \leq 1 + \beta_1(G)$ dla $G$ skończenie prezentowalnej.
+\end{wniosek}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

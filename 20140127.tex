@@ -1,0 +1,149 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill $\ell_2$-metody w~topologii: 27 stycznia 2014 \hfill}
+ 
+\begin{document}
+
+\begin{stwierdzenie}
+	$\| d \omega\|_{k-1}^2 \leq \| \omega \_k^2$
+\end{stwierdzenie}
+
+\begin{wniosek}
+	$d : A^{k,p} \to A^{k-1, p+1}$ jest ograniczonym operatorem
+	dla każdego $k \geq 1, p \geq 0$.
+\end{wniosek}
+
+\begin{definicja}
+	Rozważmy kompleks
+	${0 \to A^{t,0} \xrightarrow d A^{t-1,1} \xrightarrow d \ldots
+	\xrightarrow d A^{t-N, N} \to 0}$ (${N = \dim X = \dim \tilde{X}}$)
+	i~kohomologie:
+	
+	$Z^{k,p} = \{ \omega \in A^{k,p} | d\omega = 0\}$
+	
+	$B^{k,p} = \im d : A^{k+1, p-1} \to A^{k,p}$
+	
+	$H^{k,p} = \bigslant{Z^{k,p}}{\overline{B^{k,p}}^{A^{k,p}}}$
+\end{definicja}
+
+\begin{stwierdzenie}
+	Przestrzenie $H^{k,p}$ są niezależne od wyboru $k$:
+	$\forall_{k \geq 0, p \geq 0} H^{k,p}$ jest $\Gamma$-izomorficzne
+	z~$\H^p(\tilde{X})$.
+\end{stwierdzenie}
+
+\begin{definicja}
+	$\| \omega \|_m^U = \left( \int_U \left|
+		(\Id + \Delta)^m \omega ( x) \right|^2 dV \right)^{\frac12}$
+	dla każdego zbioru otwartego ${U \subset \tilde{X}}$, 
+	${\omega \in A^{k,p}}$, ${1 \leq m \leq k}$.
+\end{definicja}
+
+\begin{lemat}
+	Niech $(V, x^1, \ldots, x^N)$ będzie układem współrzędnych
+	w~$\tilde{X}$, $U$ otwarty, relatywnie zwarty zbiór,
+	$\bar{U} \subseteq V$.
+	Dla $k \geq \frac N 4 + \frac 1 2$ oraz każdego $\omega \in A^{k,p}$
+	forma $\omega$ jest klasy $C^1$. Ponadto istnieje $C>0$
+	niezależne od $\omega$ takie, że
+	$$\sup_{x \in U} |\omega(x)| \leq C( \| \omega \|_k^V + 
+		\|\omega\|_0^V),$$
+	$$\max_{1 \leq i \leq N} \sup_{x \in U}
+		\left| \frac{ \partial \omega }{\partial x^i} (x) \right|
+		\leq C (\| \omega \|_k^V + \| \omega \|_0^V ),$$
+	gdzie $\frac{\partial \omega}{\partial x_i}$ to $\omega$
+	ze zróżniczkowanymi współczynnikami.
+\end{lemat}
+
+Niech $\tilde{K}$ -- kompleks taki, że $| \tilde{K}| = \tilde{X}$
+(gładka triangulacja).
+
+\begin{definicja}
+	$\omega \in \Omega^p(\tilde{X})$, definiujemy
+	${\int \omega \in C^p(\tilde{K})}$, 
+	${\int \omega = \sum (\int_\sigma \omega) \sigma}$ -- suma
+	po $p$-sympleksach w~$\tilde{K}$.
+\end{definicja}
+
+\begin{lemat}
+	Niech $\omega \in A^{k,p}$, $k > \frac N 4 + \frac 1 2$.
+	
+	Wówczas $\int \omega$ jest $L_2$.
+	
+	Co więcej, $\int : A^{k,p} \to C_{(2)}^p(\tilde{K})$ 
+	jest ograniczony
+	\\ oraz $\int B^{k,p} \subseteq d_C C_{(2)}^{p-1} (\tilde{K})$.
+\end{lemat}
+
+\begin{wniosek}
+	$\int$ indukuje przekształcenie 
+	${H^p(\tilde{X}) \to H_{(2)}^p(\tilde{K})}$.
+\end{wniosek}
+\pagebreak
+{\bf Konstrukcja Whitneya}
+
+$\{ U_v \}_{v \in K^0}$ otwarte pokrycie $X$ otwartymi gwiazdami
+wierzchołków: $U_v = \mr{star}\,v$.
+
+Weźmy gładki rozkład jedności stowarzyszony z~tym pokryciem.
+Zarówno pokrycie, jak i~rozkład jedynki możemy podnieść do $\tilde{X}$:
+${\{ \varphi_v \}_{v \in \tilde{K}^0}}$, 
+${\mr{supp}\,\varphi_v \subset \mr{star}\, v}$,
+${\varphi_v \gamma = \varphi_{\gamma^{-1} v}}$.
+
+Niech $\sigma = [v_0, \ldots, v_p]$ sympleks w~$\tilde{K}$,
+oznaczamy $\varphi_i = \varphi_{v_i}$.
+
+\begin{definicja}
+	$W_\sigma = \begin{cases}
+	            	\varphi_0 & \text{dla }p=0 \\
+	            	p! \left( \sum_{i=0}^p (-1)^i \varphi_i
+	            	d \varphi_0 \wedge \ldots \wedge 
+	            	\widehat{ d \varphi_i} \wedge \ldots
+	            	\wedge d \varphi_p \right)
+	            	& \text{dla }p \geq 1
+	            \end{cases}$
+\end{definicja}
+
+\begin{uwaga}
+	$\gamma^\ast W_\sigma = W_{\gamma^{-1} \sigma}$
+\end{uwaga}
+
+\begin{uwaga}
+	$\mr{supp}\,W_\sigma \subseteq \mr{star}\, \sigma$
+\end{uwaga}
+
+\begin{definicja}
+	Dla $f = \sum_{\sigma \in \tilde{K}} f_\sigma \sigma$
+	bierzemy $$W_f = \sum_{\sigma \in \tilde{K}} f_\sigma W_\sigma.$$
+\end{definicja}
+
+\begin{stwierdzenie}
+	\begin{itemize}
+		\item $d W = W d_C$
+		\item $\int \circ W = \Id$
+		\item $\forall_{f \in C^\ast(\tilde{K}), \gamma \in \Gamma} 
+		\gamma^\ast W f = W(f \gamma)$
+	\end{itemize}
+
+\end{stwierdzenie}
+
+\begin{lemat}
+	$\forall_{f \in C_{(2)}^p(\tilde{K}), k \geq 0}$
+	gładka forma $Wf \in A^{k,p}$.
+	
+	Co więcej, $\forall_{k \geq 0} W:C_{(2)}^p(\tilde{K}) \to A^{k,p}$
+	jest ograniczony i~$\Gamma$-ekwiwariantny.
+\end{lemat}
+
+\begin{wniosek}
+	$W$ indukuje przekształcenie 
+	$W: H_{(2)}^p(\tilde{K}) \to H^p(\tilde{X})$.
+\end{wniosek}
+
+
+Na koniec było trochę o~hipotezach itp.
+
+
+
+\end{document}

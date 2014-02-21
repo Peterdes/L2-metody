@@ -1,0 +1,306 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill $\ell_2$-metody w~topologii: 14 października 2013\hfill}
+ 
+\begin{document}
+
+\begin{definicja}[charakterystyka Eulera]
+	$\chi(X) = \sum_i (-1)^i \dim_\R C_i(X)$
+\end{definicja}
+
+\begin{definicja}[liczby Bettiego]
+	$b_i(X) = \dim_\R \H_i(X)$
+\end{definicja}
+
+\begin{wniosek}
+	$\chi(X) = \sum_i (-1)^i b_i(X)$
+\end{wniosek}
+
+\begin{wniosek}[nierówność Morse'a]
+	$X$ skończony $\Delta$-kompleks mający $\alpha_i$
+	$i$-wymiarowych sympleksów. Wtedy $\forall_{k \geq 0}$
+	${ \alpha_k - \alpha_{k-1} + \alpha_{k-2} + \ldots + (-1)^k \alpha_0
+	\geq b_k - b_{k-1} + b_{k-2} + \ldots + (-1)^k b_0}$
+\end{wniosek}
+
+{\bf Zmiana notacji}: $C_i(X) = \Delta_i(X)$
+
+\begin{stwierdzenie}
+	Rzut ortogonalny $Z_i(X) \to \H_i(X)$ indukuje 
+	izomorfizm przestrzeni liniowych
+	$H_i(X, \R) = \bigslant{Z_i(X)}{B_i(X)} \to \H_i(X)$.
+\end{stwierdzenie}
+
+\begin{wniosek}
+	$b_i(X) = \dim_\R H_i(X, \R)$
+\end{wniosek}
+
+\begin{definicja}[funktor kowariantny $\H_i$]
+	$f : X \to Y$ ciągłe, definiujemy ${f_! : \H_i(X) \to \H_i(Y)}$
+	jako ${f_\ast:H_i(X, \R) \to H_i(Y, \R)}$ złożone 
+	z~odpowiednimi izomorfizmami $\H_i(X) \simeq H_i(X,\R)$.
+\end{definicja}
+
+\begin{stwierdzenie}
+	Rzut ortogonalny $Z^i(X) \to \H_i(X)$ indukuje
+	izomorfizm przestrzeni liniowych
+	$H^i(X, \R) = \bigslant{Z^i(X)}{B^i(X)} \to \H_i(X)$.
+\end{stwierdzenie}
+
+\begin{definicja}[funktor kontrawariantny $H^i$]
+	Definiujemy $f^!: \H_i(Y) \to \H_i(X)$ jako złożenie
+	${f^\ast: H^i(Y, \R) \to H^i(X,\R)}$ z~odpowiednimi
+	izomorfizmami $\H_i(X) \simeq H^i(X, \R)$.
+\end{definicja}
+
+\begin{wniosek}
+	$(f_!)^\ast = f^!$
+\end{wniosek}
+
+{\bf Transfer}
+
+$\bar{X} \xrightarrow \pi X$ nakrycie regularne, $X = \bar{X}/G$,
+$\bar{X}, X$ skończone $\Delta$-kompleksy ($G$ działa w~sposób wolny
+przez permutację sympleksów).
+
+\begin{uwaga}
+	$\pi$ indukuje $\pi_i:C_i(\bar{X}) \to C_i(X)$:
+	dla $\sigma, \tau$ komórek $X$, 
+	$\bar{\sigma}, \bar{\tau}$ komórek $\bar{X}$ takich, że
+	$\pi(\bar{\sigma}) = \sigma, \pi(\bar{\tau}) = \tau$
+	mamy $\langle \pi_i \bar{\sigma}, \tau \rangle
+	= \langle \bar{\sigma}, \sum_{g \in G} g \bar{\tau} \rangle$.
+	
+	Wobec tego $\pi_i^\ast : C_i(X) \to C_i(\bar{X})$ spełnia
+	$\pi_i^\ast \tau = \sum_{g \in G} g \bar{\tau}$.
+\end{uwaga}
+
+\begin{definicja}[notacja]
+	$N \bar{c} = \sum_{g \in G} g \bar{c}$
+\end{definicja}
+
+\begin{wniosek}
+	$\pi_i^\ast \circ \pi_i = N_i$
+	
+	$\pi_i \circ \pi_i^\ast = |G|$
+\end{wniosek}
+
+\begin{wniosek}
+	$\pi_i^\ast: C_i(X) \to C_i(\bar{X})$ jest włożeniem.
+\end{wniosek}
+
+\begin{uwaga}
+	Mamy też $\pi_!$ indukowane przez $\pi_i$ 
+	oraz $\pi^!$ indukowane przez $\pi_i^\ast$
+	i~zachodzi ${\pi^! = (\pi_!)^\ast}$
+	oraz $\pi_! \circ \pi^! = |G|$.
+\end{uwaga}
+
+\begin{stwierdzenie}
+	$\pi_! : \H_i(\bar{X})^G \to \H_i(X)$, 
+	$\pi^! : \H_i(X) \to \H_i(\bar{X})^G$ są izomorfizmami.
+\end{stwierdzenie}
+\pagebreak
+{\bf Pierścienie grupowe}
+
+\begin{definicja}[pierścień grupowy]
+	$R$ to pierścień z~$1$ (nas interesują: $\Z, \mb{Q}, \R, \mb{C}$),
+	pierścień grupowy $R G, R[G]$ to zbiór
+	${\{f: G \to R : f(g) \neq 0\text{ dla sk. wielu g}\}}$
+	\\ z~działaniami ${(f+f')(g) = f(g) + f'(g)}$,
+	${ (f \ast f')(g) = \sum_{h \in G} f(h) f'(h^{-1} g) }$.
+\end{definicja}
+
+\begin{uwaga}[konwencja]
+	$f = \sum_g f(g) 1_g = \sum_g f(g) g$
+\end{uwaga}
+
+\begin{fakt}
+	$\1 = 1_e$ to jedynka w~$RG$.
+\end{fakt}
+
+\begin{fakt}
+	Jeśli $R, G$ przemienne, to $RG$ przemienny.
+\end{fakt}
+
+\begin{definicja}
+	$\displaystyle \ell_2(G) = \left\{ f: G \to \R \middle| \sum_{x \in G} |f(x)|^2 < \infty \right\}$
+	
+	Jest to przestrzeń Hilberta z~normą 
+	$\| f\| = \sqrt{ \sum_{g \in G} |f(x)|^2 }$
+	pochodzącej od iloczynu skalarnego
+	$\langle f, f' \rangle = \sum_{g \in G} f(x) f'(x)$.
+\end{definicja}
+
+\begin{fakt}
+	Istnieje włożenie przestrzeni liniowych 
+	$\R G \hookrightarrow \ell_2(G)$.
+	
+	Co więcej, $\R G$ jest gęstym podzbiorem $\ell_2(G)$.
+\end{fakt}
+
+{\bf Reprezentacja (lewa) regularna}
+
+\begin{definicja}[działanie $G$ na $\ell_2(G)$]
+	$(g f)(x) = (\lambda_g f) (x) = f(g^{-1} x)$
+\end{definicja}
+
+\begin{fakt}
+	\begin{itemize}
+		\item $\lambda_{gh} = \lambda_g \lambda_h$
+		\item $\lambda_e = \Id$
+		\item $\lambda_{g^{-1}} = \lambda_g^{-1}$
+	\end{itemize}
+
+\end{fakt}
+
+\begin{lemat}
+	$\lambda_g$ są unitarne na $\ell_2(G)$.
+\end{lemat}
+
+\begin{fakt}
+	Reprezentacja $\lambda$ rozszerza się liniowo do
+	lewego działania $\R G$ na $\ell_2(G)$.
+\end{fakt}
+
+\begin{uwaga}
+	$\alpha = \sum r(g) g$, $f \in \ell_2(G)$, 
+	wtedy ${ \| \alpha f\| \leq \| f \| \sum_g |r(g)|}$.
+\end{uwaga}
+
+\begin{uwaga}
+	Podobnie możemy zdefiniować prawą reprezentację regularną $\rho$:
+	${(fg)(x) = (\rho_g f) (x) = f(xg)}$
+	i~rozszerzyć do prawego działania $\R G$ na $\ell_2(G)$.
+\end{uwaga}
+
+Niech $Y$ -- nieskończony $\Delta$-kompleks, na którym $G$ działa wolno
+przez permutację sympleksów.
+
+Niech działanie $G$ na $Y$ będzie kozwarte, tj. $X = \bigslant{Y}{G}$
+jest skończonym $\Delta$-kompleksem.
+
+\begin{przyklad}
+	$Y = \R, G = \Z, X = \bigslant Y G  = S^1$
+\end{przyklad}
+
+\begin{przyklad}
+	$Y = \R^2, G = \Z^2, X = \bigslant Y G  = T^2$
+\end{przyklad}
+
+\begin{przyklad}
+	$Y = \text{drzewo}, G = \mb{F}_2, X = \bigslant Y G = \text{ósemka}$
+\end{przyklad}
+
+\begin{definicja}[$C_i(Y, G)$]
+	$K_i(Y, \R)$ grupa symplicjalnych $i$-łańcuchów $Y$,
+	\\ $\Sigma_i$ zbiór $i$-wymiarowych sympleksów w~$Y$,
+	\\ $K_i(Y, \R) = \{ f: \Sigma_i \to \R \}$.
+	
+	Niech $C_i(Y) = C_i(Y, G) = {\ell_2(G) \otimes_G K_i(Y, \R)}
+	= { \{f: \Sigma_i \to \ell_2(G) | f(g \sigma) = \lambda_g f(\sigma) \} }$.
+\end{definicja}
+
+\begin{definicja}[$C_i$ jako przestrzeń Hilberta]
+	Niech $\bar{\tau}_i^\mu$ (${\mu \in \{ 1, \ldots, \alpha_i\}}$,
+	$\alpha_i$ to liczba $i$-sympleksów w~$X$) będą
+	reprezentantami orbit $i$-sympleksów przy działaniu $G$
+	na $Y$. Bazą ortonormalną $C_i(Y)$ jest
+	$$\left\{ x \otimes \bar{\tau}_i^\mu 
+		\middle| x \in G, \mu \in \{1, \ldots, \alpha_i \} \right\}.$$
+		
+	Równoważnie, dla $f, f' \in C_i(Y)$
+	$$\langle f, f' \rangle =
+	\sum_{\mu \in \{1, \ldots, \alpha_i \}}
+		\left\langle f(\bar{\tau}_i^\mu), f'(\bar{\tau}_i^\mu) 
+				\right\rangle_{\ell_2(G)}$$
+\end{definicja}
+
+\begin{uwaga}
+	$f \in \ell_2(G)$, to elementy 
+	$f \otimes \bar{\tau}_i^\mu \in C_i(Y)$ spełniają
+	$\| f \otimes \bar{\tau}_i^\mu\| = \| f \|$.
+\end{uwaga}
+
+\begin{wniosek}
+	Przekształcenie $(f_1, \ldots, f_{\alpha_i}) 
+	\mapsto \sum_{\mu = 1}^{\alpha_i} f_\mu \otimes \bar{\tau}_i^\mu$
+	zadaje izometryczny $G$-ekwiwariantny izomorfizm
+	$$\left( \bigoplus_1^{\alpha_i} \ell_2(G) \right) \to C_i(Y).$$
+\end{wniosek}
+
+{\bf Różniczki}
+
+\begin{definicja}
+	$d_i$ dane tymi wzorami, co zawsze (wcześniej: $\partial_i$).
+\end{definicja}
+
+\begin{lemat}
+	Neich $\varphi: (\R G)^n \to (\R G)^m$ morfizm $\R G$-modułów,
+	wtedy operator indukowany
+	${\tilde{\varphi} = \Id_{\ell_2(G)} \otimes_{\R G} \varphi
+	: (\ell_2(G))^n \to (\ell_2(G))^m}$
+	jest ograniczony.
+\end{lemat}
+
+\begin{wniosek}
+	$d_i: C_i(Y) \to C_{i-1}(Y)$ operator ograniczony 
+	w~sensie przestrzeni Hilberta.
+\end{wniosek}
+
+\begin{definicja}
+	$\delta_{i-1} = d_i^\ast$
+	
+	$Z_i(Y) = \ker d_i, \quad Z^i(Y) = \ker \delta_i$ 
+	domknięte podprzestrzenie liniowe w~$C_i(Y)$.
+\end{definicja}
+
+\begin{definicja}
+	$\H_i(Y,H) = Z_i(Y) \cap Z^i(Y)$ 
+	-- harmoniczne $\ell_2$-kołańcuchy na $Y$
+	
+	$B_i(Y) = \im d_{i+1}, \quad B^i(Y) = \im \delta_{i-1}$ 
+	(brzegi i~kobrzegi)
+	
+	$\bar{B}_i(Y), \bar{B}^i(Y)$ domknięcia podprzestrzeni
+	$B_i(Y), B^i(Y)$ w~normie
+\end{definicja}
+
+\begin{stwierdzenie}[$\ell_2$-rozkład H-dR]
+	$C_i(Y) = \bar{B}^i \operp Z_i = \bar{B}_i \operp Z^i
+	= \bar{B}_i \operp \bar{B}^i \operp \H_i$
+\end{stwierdzenie}
+
+\begin{definicja}[laplasjan]
+	$\Delta_i = d_{i+1} \delta_i + \delta_{i-1} d_i : C_i(Y) \to C_i(Y)$
+\end{definicja}
+
+\begin{stwierdzenie}
+	$\H_i(Y, G) = \ker \Delta_i$
+\end{stwierdzenie}
+
+\begin{twierdzenie}
+	$H_i^G(Y, \ell_2(G)) = \bigslant{Z_i(Y)}{B_i(Y)}$
+\end{twierdzenie}
+
+\begin{definicja}[$\ell_2$-homologie zredukowane]
+	$\bar{H}_i(Y) = \bigslant{Z_i(Y)}{\bar{B}_i(Y)}$
+\end{definicja}
+
+\begin{stwierdzenie}
+	Rzut ortogonalny $Z_i \to \bar{H}_i(Y)$ indukuje 
+	izomorfizm $\bar{H}_i(Y) \simeq \H_i(Y)$.
+\end{stwierdzenie}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

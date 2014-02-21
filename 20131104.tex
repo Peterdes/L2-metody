@@ -1,0 +1,84 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill $\ell_2$-metody w~topologii: 4 listopada 2013\hfill}
+ 
+\begin{document}
+
+$X$ przestrzeń topologiczna, $A \subseteq X$ podprzestrzeń,
+to $C_n(A) \hookrightarrow C_n(X)$.
+
+\begin{definicja}[homologie relatywne]
+	$C_n(X, A) = \bigslant{C_n(X)}{C_n(A)}$
+\end{definicja}
+
+\begin{definicja}[operator brzegu]
+	$\partial:C_n(X) \to C_{n-1}(X)$
+	przeprowadza $C_n(A)$ w~$C_{n-1}(A)$,
+	czyli indukuje $\partial: C_n(X, A) \to C_{n-1}(X, A)$.
+\end{definicja}
+
+\begin{definicja}[relatywne homologie]
+	$H_n(X, A) = H_n( C_n(X, A), \partial)$
+\end{definicja}
+
+\begin{wniosek}
+	Elementy $H_n(X, A)$ są reprezentowane przez $n$-łańcuchy
+	$\alpha \in C_n(X)$, dla których $\partial \alpha \in C_{n-1}(A)$.
+\end{wniosek}
+
+\begin{wniosek}
+	Relatywny cykl $\alpha$ jest trywialny, jeśli jest relatywnym
+	brzegiem: $\alpha = \partial \beta + \gamma$
+	dla pewnych $\beta \in C_{n+1}(X), \gamma \in C_n(A)$.
+\end{wniosek}
+
+\begin{twierdzenie}
+	Ciąg $\ldots \to H_n(A) 
+	\xrightarrow{i_\ast} H_n(X) 
+	\xrightarrow{j_\ast} H_n(X, A)
+	\xrightarrow{\tau} H_{n-1}(A) \to \ldots$
+	jest dokładny.
+	
+	Weźmy $[c] \in C_n(X, A)$ dla $c \in C_n(X)$, takie, że
+	$\partial [c] = 0$,
+	wtedy $\tau([c]) = \partial c \subset C_{n-1}(A)$.
+\end{twierdzenie}
+
+\begin{twierdzenie}
+	$f:(X, A) \to (Y, B)$ indukuje $f_\ast: H_n(X, A) \to H_n(Y, B)$
+	i~$f_\ast$ są przemienne z~$\tau$, czyli
+	$\tau$ jest naturalną transformacją z~$H_n(X, A)$ do $H_{n-1}(A)$.
+\end{twierdzenie}
+
+\begin{twierdzenie}
+	Kanoniczny homeomorfizm $H_n^\Delta(X) \to H_n(X)$ jest
+	izomorfizmem dla każdego $n$ i~dla każdego $\Delta$-kompleksu $X$.
+\end{twierdzenie}
+
+\begin{cwiczenie}
+	Udowodnić równość $\ell_2$-homologii zredukowanych 
+	dla różnych struktur $\Delta$-kompleksu.
+	
+	Ogólniej: homotopijną niezmienniczośc $\ell_2$-homologii
+	zredukowanych.
+\end{cwiczenie}
+
+\begin{cwiczenie}
+	$Y = \R^n, G = \Z^n, X=T^n = (S^1)^n$
+	
+	Udowodnij, że $\N(\Z^n) \simeq L_\infty(T^n)$
+	i~znajdź wzór na $\tr_G: L_\infty(T^n) \to \R$.
+	
+	Podpowiedź w~notatkach.
+\end{cwiczenie}
+
+
+
+
+
+
+
+
+
+
+\end{document}

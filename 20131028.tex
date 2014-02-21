@@ -1,0 +1,314 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill $\ell_2$-metody w~topologii: 28 października 2013\hfill}
+ 
+\begin{document}
+
+{\bf Wymiar Murray'a - von Neumanna}
+
+\begin{uwaga}
+	Chcemy zdefiniować $\dim_G$ na Hilbertowskich $G$-modułach t, że:
+	\begin{itemize}
+		\item $\dim_G M \geq 0$
+		\item $\dim_G M  = 0 \iff M = 0$
+		\item $\dim_G M = \dim_G N$ jeśli $M \simeq N$
+		\item $\dim_G M \oplus N = \dim_G M + \dim_G N$
+		\item $\dim_G M \leq \dim_G N$ jeśli $M \leq N$
+		\item $\dim_G \ell_2(G) = 1$
+		\item $\dim_G M = \frac{1}{|G|} \dim_\R M$ dla $G$ -- skończonej
+		\item $\dim_G M = \frac{1}{[G:S]} \dim_G M$ jeśli $S \leq G$
+		podgrupa skończonego indeksu
+	\end{itemize}
+
+\end{uwaga}
+
+\begin{definicja}[algebra von Neumanna]
+	\emph{Algebrą von Neumanna grupy $G$} nazywamy algebrę $\N(G)$ 
+	ograniczonych (lewo-) $G$-ekwiwariantnych operatorów 
+	${T: \ell_2(G) \to \ell_2(G)}$ 
+	(takich, że $\forall_{g \in G} {T \lambda_g = \lambda_g T}$).
+	
+	$\ell_2(G)$ jest bimodułem nad $\R G$ (przez prawe i~lewe działanie).
+\end{definicja}
+
+\begin{uwaga}
+	$\R G \subseteq \N(G)$.
+\end{uwaga}
+
+\begin{stwierdzenie}
+	$\phi \in \N(G) \implies \phi^\ast \in \N(G)$
+\end{stwierdzenie}
+
+\begin{wniosek}
+	$\N(G)$ jest $\mb{C}^\ast$-algebrą.
+\end{wniosek}
+
+\begin{uwaga}
+	Na $\R G$, $\ast: \sum r(g) g \mapsto \sum r(g) g^{-1}$.
+\end{uwaga}
+
+\begin{uwaga}
+	Elementy $\R G$ jako macierze $|G|$ na $|G|$ są stałe na przekątnych
+	$\{ (g,h): g^{-1} h = \gamma \}$.
+\end{uwaga}
+
+\begin{definicja}[ślad]
+	$\varphi \in \N(G)$, to $\tr_G( \varphi) 
+	= \langle \varphi(\1), \1 \rangle$
+\end{definicja}
+
+\begin{uwaga}
+	Na $\R G$, $\varphi = \sum r(g) g$, $\tr_G(\varphi) = r(e)$.
+\end{uwaga}
+
+\begin{uwaga}
+	Jeśli $G$ skończona, to $\R G = \ell_2(G) = \N(G)$,
+	$\varphi$ odpowiada macierz $M_\varphi$ stała na przekątnych,
+	$\tr_G(\varphi) = \frac 1 {|G|} \tr(M_\varphi)$.
+\end{uwaga}
+
+\begin{stwierdzenie}
+	$\tr_G(\varphi) = \tr_G(\varphi^\ast)$
+\end{stwierdzenie}
+
+\begin{lemat}
+	$\R$-liniowe przekształcenie ${\theta: \N(G) \to \ell_2(G)}$,
+	${\theta(\varphi) = \varphi(\1)}$ jest włożeniem
+	oraz $\theta(\varphi^\ast) = \overline{\varphi(\1)}$,
+	gdzie $\bar{f}(x) = f(x^{-1})$.
+\end{lemat}
+
+\begin{wniosek}
+	$\tr_G$ jest śladem na $\N(G)$, 
+	czyli $\tr_G(\varphi \circ \psi) = \tr_G(\psi \circ \varphi)$.
+\end{wniosek}
+
+\begin{cwiczenie}
+	Znaleźć opis $\N(G)$ oraz $\tr_G$ dla $G= \Z^n$.
+\end{cwiczenie}
+
+\begin{definicja}
+	Niech $M_n(\N(G))$ algebra ograniczonych (lewo-) 
+	$G$-ekwiwariantnych operatorów na $\ell_2(G)^n$.
+	
+	Operator $F \in M_n(\N(G))$ jest wyznaczony przez macierz
+	$[F_{ij}]$, gdzie $F_{ij} \in \N(G)$ i~spełnia
+	$F(a_1, \ldots, a_n) = (\sum F_{1k} a_k, \ldots, \sum F_{nk} a_k)
+	\in \ell_2(G)^n$.
+\end{definicja}
+
+\begin{uwaga}
+	Mamy $(F^\ast)_{ij} = F_{ji}^\ast$.
+\end{uwaga}
+
+\begin{definicja}[ślad]
+	$\tr_G(F) = \sum_{i=1}^n \tr_G(F_{ii})$
+\end{definicja}
+
+\begin{lemat}
+	Jeśli $F = F^\ast \in M_n(\N(G))$, $F^2 = F$,
+	to $\tr_G(F) = \sum_{i,j} \| F_{ij}(\1) \|^2$.
+\end{lemat}
+
+\begin{wniosek}
+	$F \in M_n(\N(G))$ samosprzężony idempotentny,
+	to $\tr_G F \geq 0$ oraz ${\tr_G F = 0 \implies F = 0}$.
+\end{wniosek}
+
+\begin{uwaga}
+	To samo jest prawdą dla każdego $F$ idempotentnego,
+	bo wtedy dla $\pi$ rzutu ortogonalnego na $\im F$
+	mamy $\tr_G \pi = \tr_G F$.
+\end{uwaga}
+
+\begin{stwierdzenie}
+	Jeśli $P \in \N(G)$ idempotentny, to 
+	$\tr_G(P) + \tr_G(\Id-P) = 1$, czyli
+	$\tr_G P \leq 1$ oraz $\tr_G(P) = 1 \iff P = \Id$.
+\end{stwierdzenie}
+
+\begin{uwaga}
+	Jeśli $P \in \Z G$ idempotentny, to $\tr_G P = 0$ lub $\tr_G P = 1$.
+\end{uwaga}
+
+\begin{wniosek}
+	Jedynymi idempotentami w~$\Z G$ są $0$ oraz $1$.
+\end{wniosek}
+
+\begin{hipoteza}[Kaplonsky]
+	$G$ beztorsyjna, to $0$ i~$1$ są jedynymi idempotentami w~$\R G$.
+\end{hipoteza}
+
+\begin{fakt}
+	$V \subseteq \ell_2(G)^n$ -- $G$-niezmiennicza domknięta 
+	podprzestrzeń, $\pi_V$ rzut ortogonalny z~$\ell_2(G)$ na $V$.
+	
+	Wtedy $\pi_V \in M_n(\N(G))$.
+\end{fakt}
+
+\begin{definicja}[wymiar von Neumanna]
+	$V$ domknięta podprzestrzeń $\ell_2(G)^n$, to 
+	${\dim_G V = \tr_G \pi_V}$
+\end{definicja}
+
+\begin{stwierdzenie}
+	$\pi_B$ idempotent, czyli $\dim_G V \geq 0$ 
+	oraz $\dim_G V = 0 \implies V = 0$.
+\end{stwierdzenie}
+
+\begin{definicja}[wymiar von Neumanna]
+	Niech $M$ -- $G$-moduł Hilbertowski, ustalmy $G$-ekwiwariatną
+	izometrię $\alpha: M \to V$, na $V \subseteq \ell_2(G)^n$
+	domkniętą podprzestrzeń.
+	
+	Wtedy $\dim_G M = \dim_G V$.
+\end{definicja}
+
+\begin{uwaga}
+	Ta definicja nie zależy od wyboru $\alpha$.
+\end{uwaga}
+
+\begin{wniosek}
+	$\dim_G M \geq 0$
+	
+	$\dim_G M = 0 \iff M = 0$
+\end{wniosek}
+
+\begin{wniosek}
+	$\dim_G(M \oplus N) = \dim_G M + \dim_G N$
+\end{wniosek}
+
+\begin{wniosek}
+	$\dim_G M = \frac 1 {[G:S]} \dim_S M$ dla $S \subseteq G$,
+	$[G:S] < \infty$.
+\end{wniosek}
+
+\begin{definicja}
+	Kompleks łańcuchowy $G$-modułów Hilbertowskich
+	${V_\ast: \ldots \to V_{i+1} \to V_i \to V_{i-1} \to \ldots}$
+	nazywamy $\ell_2(G)$-kompleksem łańcuchowym, jeśli
+	dla każdego $i$, $d_i:V_i \to V_{i-1}$ jest
+	ograniczonym $G$-ekwiwariantnym operatorem.
+	
+	Wówczas zredukowane kohomologie $V_\ast$ są $G$-modułami 
+	Hilbertowskimi $\bar{H}_i(V_\ast) 
+	= \bigslant{\ker d_i}{\im d_{i+1}}$,
+	
+	zaś $V_\ast$ nazywa się słabo-dokładny, jeśli 
+	$\forall_i \bar{H}_i(V_\ast) = 0$.
+\end{definicja}
+
+\begin{definicja}
+	$V_\ast, W_\ast$ -- $\ell_2(G)$-kompleksy łańcuchowe.
+	\begin{enumerate}
+		\item \emph{Morfizmem} $\phi_\ast:V_\ast \to W_\ast$
+		nazywamy morfizm kompleksów łańcuchowych
+		${\{\phi_i : V_i \to W_i\}}$,
+		w~którym operatory są $G$-ekwiwariantne i~ograniczone.
+		
+		\item Dwa morfizmy $\phi_\ast, \psi_\ast:V_\ast \to W_\ast$
+		są \emph{$\ell_2(G)$-homotopijne}, jeśli są homotopijne
+		łańcuchowo przez homotopię łańcuchową
+		składającą się z~operatorów ograniczonych
+		$G$-ekwiwariantnych.
+		
+		\item Kompleksy $V_\ast, W_\ast$ są 
+		\emph{$\ell_2(G)$-homotopijne}, jeśli istnieją morfizmy
+		${\phi_\ast:V_\ast \to W_\ast}, {\psi_\ast:V_\ast \to W_\ast}$
+		takie, że $\phi_\ast \psi_\ast$ i~$\psi_\ast \phi_\ast$
+		są $\ell_2(G)$-homotopijne z~identycznością.
+	\end{enumerate}
+
+\end{definicja}
+
+\begin{wniosek}
+	Morfizm $\phi_\ast:V_\ast \to W_\ast$ indukuje ograniczone
+	$G$-ekwiwariantne operatory 
+	$\bar{H}_i(V_\ast) \to \bar{H}_i(W_\ast)$,
+	które zależą jedynie od klasy homotopii $\phi_\ast$.
+\end{wniosek}
+
+\begin{wniosek}
+	Jeśli $\ell_2(G)$-kompleksy łańcuchowe $V_\ast, W_\ast$ są 
+	$\ell_2(G)$-homotopijne, to moduły Hilbertowskie
+	$\bar{H}_i(V_\ast), \bar{H}_i(W_\ast)$
+	są izomorficzne dla wszystkich $i$.
+\end{wniosek}
+
+\begin{definicja}
+	Ciąg $U \to V \to W$ $G$-modułów Hilbertowskich nazywa się
+	krótkim ciągiem słabo-dokładnym, jeśli
+	$0\to U \to V \to W \to 0$ jest słabo-dokładnym
+	$\ell_2(G)$-kompleksem łańcuchowym.
+\end{definicja}
+
+\begin{fakt}
+	Jeśli $\alpha:V \to W$ to $G$-ekwiwariantny operator 
+	$G$-modułów Hilbertowskich, to $G$-moduły Hilbertowskie
+	$\overline{\alpha(V)} \subseteq W$, 
+	$(\ker \alpha)^\perp \subseteq V$ są izomorficzne
+	oraz $(\ker \alpha)^\perp \simeq \bigslant V {\ker \alpha}$.
+\end{fakt}
+
+\begin{wniosek}
+	$\dim_G V = {\dim_G \ker \alpha + \dim_G \overline{\alpha(V)}}
+	= {\dim_G \ker \alpha + \dim_G \left( \bigslant V {\ker \alpha} \right) }$
+\end{wniosek}
+
+\begin{wniosek}
+	$U \to V \to W$ słabo-dokładny krótki ciąg 
+	$G$-modułów Hilbertowskich, to 
+	$\dim_G V = \dim_G U + \dim_G W$.
+\end{wniosek}
+
+\begin{wniosek}
+	Jeśli $V_\ast : 0 \to V_n \to  \ldots \to V_0 \to 0$ jest
+	$\ell_2(G)$-kompleksem łańcuchowym $G$-modułów Hilbertowskich,
+	to ${\sum_i (-1)^i \dim_G V_i = \sum_i (-1)^i \dim_G \bar{H}_i(V_\ast)}$.
+\end{wniosek}
+
+$Y$ to $\Delta$-kompleks z~wolnym kozwartym symplicjalnym 
+działaniem grupy $G$.
+
+\begin{stwierdzenie}
+	$C_\ast(Y) = \ell_2(G) \otimes_G K_\ast(Y)$ jest 
+	$\ell_2(G)$-kompleksem łańcuchowym.
+\end{stwierdzenie}
+
+\begin{definicja}[liczby Bettiego]
+	$\beta_i(Y, G) = \dim_G \bar{H}_i(Y)$.
+\end{definicja}
+
+\begin{stwierdzenie}
+	\begin{enumerate}
+		\item $\beta_i(Y, G)$ jest niezmiennikiem $G$-homotopii $Y$,
+		jest też niezmiennikiem homotopii $X = \bigslant Y G$.
+		
+		\item Jeśli $S \subset G$ podgrupa indeksu $m$,
+		to $\beta_i(Y, S) = m \beta_i(Y, G)$.
+		
+		\item $|G| < \infty$, to $\beta_i(Y, G) 
+		= \frac 1 {|G|} b_i(Y)$.
+		
+		W szczególności dla $Y$ spójnego $\beta_0(Y, G)
+		= \frac{1}{|G|}$.
+		
+		\item Jeśli $|G| = \infty$, $Y$ spójny, to $\beta_0(Y, G) = 0$.
+	\end{enumerate}
+\end{stwierdzenie}
+
+\begin{definicja}[liczby Bettiego]
+	$X$ spójny skończony $\Delta$-kompleks,
+	$\ell_2$-liczbą Bettiego $\beta_i(X)$ nazywamy
+	$\beta_i(\tilde{X}, G)$, gdzie
+	$\tilde{X}$ nakrycie uniwersalne,
+	$G = \pi_1(X)$ grupa podstawowa $X$.
+\end{definicja}
+
+
+
+
+
+
+
+\end{document}

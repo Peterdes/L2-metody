@@ -1,0 +1,226 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill $\ell_2$-metody w~topologii: 18 listopada 2013\hfill}
+ 
+\begin{document}
+
+\begin{stwierdzenie}
+	$C_i(\tilde{X}) \simeq (\ell_2(G))^{\alpha_i}$, 
+	gdzie $\alpha_i$ to liczba $i$-sympleksów $X$,
+	więc ${0 \leq \beta_i(X) \leq \alpha_i}$.
+\end{stwierdzenie}
+
+\begin{stwierdzenie}
+	$p:\bar{X} \to X$ skończone nakrycie,
+	to $\beta_i(\bar{X}) = m\beta_i(X)$.
+\end{stwierdzenie}
+
+\begin{wniosek}
+	Jeśli $X$ nakrywa siebie nietrywialnie,
+	to $\forall_i \beta_i(X) = 0$.
+\end{wniosek}
+
+\begin{twierdzenie}
+	$\chi(X) = \sum_i (-1)^i \beta_i(X) 
+	( = \sum_i(-1)^i b_i(X) = \sum_i (-1)^i \alpha_i)$
+\end{twierdzenie}
+
+\begin{wniosek}[nierówność Morse'a]
+	$X$ spójny $\Delta$-kompleks ze skończonym $(k+1)$-szkieletem,
+	wtedy
+	$\alpha_k - \alpha_{k-1} + \ldots + (-1)^k \alpha_0 \geq
+	\beta_k - \beta_{k-1} + \ldots + (-1)^k \beta_0$
+\end{wniosek}
+
+\begin{twierdzenie}
+	Istnieje model $K(G, 1)$ (przestrzeń Eilenberga-Maclane'a),
+	który jest w~każdym wymiarze skończonym kompleksem.
+\end{twierdzenie}
+
+\begin{definicja}[$\ell_2$-liczby Bettiego grupy $G$]
+	 $\beta_i(G) = \beta_i(K(G,1))$
+\end{definicja}
+
+\begin{przyklad}
+	$K(\Z, 1) = S^1, 
+	\quad K(\Z_2, 1)= \R P ^\infty, 
+	\quad K(\mb{F}_n, 1) = \bigwedge_1^n S^1,$ \\
+	${K(G \times H, 1) = K(G, 1) \times K(H, 1)}$
+\end{przyklad}
+
+\begin{definicja}
+	$G$ ma typ $F_n$, jeśli istnieje model $K(G, 1)$, który ma skończone szkielety w~wymiarach $i$ dla $i\leq n$.
+	
+	$G$ ma typ $F_\infty$, jeśli ma typ $F_n$ dla każdego $n$.
+\end{definicja}
+
+\begin{wniosek}
+	Z~konstrukcji $K(G, 1)$ przez dolepianie komórek wynika, że
+	\begin{itemize}
+		\item $G$ skończenie generowana, to $G$ ma typ $F_1$,
+		\item $G$ skończenie prezentowalna, to $G$ ma typ $F_2$.
+	\end{itemize}
+\end{wniosek}
+
+\begin{wniosek}
+	Dla $G$ typu $F_n$ możemy zdefiniować 
+	$\beta_i(G) = \beta_i(K(G, 1)^{(n)})$ dla $i<n$.
+	
+	W~szczególności $\beta_1(G)$ jest dobrze zdefiniowane,
+	gdy $G$ jest skończenie prezentowalna.
+\end{wniosek}
+
+{\bf Dualność Poincar\'{e}}
+
+$X$ spójny skończony $\Delta$-kompleks, $\pi_1(X) = G$, 
+$K(\tilde{X})$ kompleks łańcuchowy $\tilde{X}$.
+
+\begin{definicja}
+	${}^nDK_j(\tilde{X}) = \Hom_G(K_{n-j}(\tilde{X}), \Z[G])$ 
+	-- kompleks $G$-modułów, 
+	${(xf)(c) = f(c) x^{-1}}$ dla $x \in G$, $f \in {}^nDK_j(\tilde{X})$.
+\end{definicja}
+
+\begin{definicja}
+	$X$ jest \emph{wirtualnym $PD^n$-kompleksem}, jeśli 
+	istnieje $S < G$, $[G:S] < \infty$ taka, że
+	$K_\ast(\tilde{X})$ jest łańcuchowo homotopijny
+	jako $\Z[S]$-kompleks z~${}^nDK_\ast(\tilde{X})$.
+\end{definicja}
+
+\begin{definicja}
+	Grupa $G$ jest \emph{wirtualnie $PD^n$}, jeśli 
+	istnieje $K(G, 1)$, które jest wirtualnym $PD^n$-kompleksem.
+\end{definicja}
+
+\begin{twierdzenie}
+	$X$ -- skończony wirtualny $PD^n$-kompleks.
+	Wówczas istnieje podgrupa skończonego indeksu $S < \pi_1(X)$
+	taka, że $S$-moduły Hilbertowskie $\bar{H}_i(\tilde{X})$
+	i~$\bar{H}_{n-i}(\tilde{X})$ są izomorficzne.
+	
+	W~szczególności $\beta_i(X) = \beta_{n-i}(X)$ dla wszystkich
+	$i \leq n$ oraz jeśli $\pi_1(X)$ nieskończona,
+	to $\beta_n(X) = \beta_0(X) = 0$.
+\end{twierdzenie}
+
+\begin{twierdzenie}
+	$X$ to $G$-$\Delta$-kompleks, $Y$ to $H$-$\Delta$-kompleks. \\
+	Wtedy ${\beta_j(X \times Y, G \times H)
+	= \sum \beta_s(X, G) \beta_{j-s}(Y, H)}$.
+\end{twierdzenie}
+
+\begin{przyklad}
+	$\Sigma_g$ orientowalna powierzchnia genusu $g>0$,
+	$\Sigma_g$ rozmaitość, czyli $PD^2$-kompleks, czyli 
+	$\beta_0(\Sigma_g) = \beta_2(\Sigma_g) = 0$,
+	ale $\chi(\Sigma_g) = 2 - 2g$, czyli
+	$\beta_1(\Sigma_g) = 2g  -2$.
+\end{przyklad}
+
+{\bf Coś ciekawego}
+
+\begin{hipoteza}[A]
+	$Y$ spójny wolny kozwarty $G$-kompleks, wówczas wszystkie
+	$\beta_i(Y, G)$ są wymierne.
+\end{hipoteza}
+
+\begin{hipoteza}[B]
+	$\phi: \Z[G]^m \to \Z[G]^n$ morfizm $\Z[G]$-modułów,
+	$\tilde{\phi}$ indukowany operator ograniczony
+	$\ell_2(G)^m \to \ell_2(G)^n$, wtedy
+	$\dim_G \ker \tilde{\phi}$ jest wymierny.
+\end{hipoteza}
+
+\begin{hipoteza}[o dzielnikach zera]
+	$G$ beztorsyjna, wówczas $\mb{Q}[G]$ nie posiada żadnych 
+	dzielników zera różnych od $0$.
+\end{hipoteza}
+
+\begin{fakt}
+	Hipotezy A i~B są równoważne i~implikują hipotezę
+	o~dzielnikach zera.
+\end{fakt}
+
+\begin{definicja}[średnia na grupie $G$]
+	To ciągły funkcjonał $m:\ell_\infty(G) \to \R$ taki, że
+	$m(f) \geq 0$ dla $f \geq 0$ oraz $m(1_G) = 1$.
+\end{definicja}
+
+\begin{definicja}[średnia niezmiennicza]
+	To taka średnia, że $m(f) = m(gf)$ (gdzie ${(gf)(x) = f(g^{-1}x)}$.
+\end{definicja}
+
+\begin{definicja}[średniowalność]
+	$G$ jest średniowalna, jeśli istnieje średnia niezmiennicza na $G$.
+\end{definicja}
+
+\begin{przyklad}
+	$|G|<\infty$, $m(f) = \frac{1}{|G|} \sum f(g)$
+\end{przyklad}
+
+\begin{przyklad}
+	Na $\Z$, $m_n(f) = \frac{1}{2n+1} \sum_{-n \leq x \leq n} f(x)$.
+	
+	Lub $m = w^\ast\lim_{k \to \infty} m_{n_k}$ (słaba granica).
+\end{przyklad}
+
+\begin{twierdzenie}[F\o{}lner]
+	$G$ średniowalna, generowana przez skończony zbiór $S$
+	wtedy i~tylko wtedy, gdy
+	$\forall_{\varepsilon > 0} \exists_{F \subset G\text{ sk.}}$
+	taki, że $\forall_{s \in S} \frac{|F \Delta sF |}{|F|} \leq \varepsilon$.
+\end{twierdzenie}
+
+\begin{lemat}[Mazura]
+	$\alpha_i \to \alpha$ słabo, to istnieje ciąg 
+	$\alpha_i' = \sum_j c_{ij} \alpha_i$, $c_{ij} \geq 0$,
+	$\sum_j c_{ij} = 1$, taki, że $\alpha_i' \to \alpha$ w~normie.
+\end{lemat}
+
+\begin{uwaga}
+	$0 \to N \to G \to Q \to 0$ dokładny, $N, Q$ średniowalne, 
+	to $G$ średniowalna.
+	
+	Podgrupa grupy średniowalnej jest średniowalna.
+	
+	Iloraz grupy średniowalnej jest średniowalny.
+\end{uwaga}
+
+\begin{przyklad}
+	$\mb{F}_k$ nie jest średniowalna dla $k \geq 2$.
+\end{przyklad}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,122 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill $\ell_2$-metody w~topologii: 2 grudnia 2013\hfill}
+ 
+\begin{document}
+
+\begin{definicja}[torus przekształcenia]
+	$X$ skończony $\Delta$-kompleks, 
+	$f:X \to X$ homeomorfizm symplicjalny,
+	wtedy $T_f = \bigslant{X \times I}{(x,0) \sim (f(x),1)}$.
+\end{definicja}
+
+\begin{uwaga}
+	$X$ skończony $\Delta$-kompleks, to $T_f$ także.
+	
+	Co więcej, liczba $i$-sympleksów $T_f$ zależy 
+	od liczby $i$-sympleksów oraz $(i-1)$-sympleksów w~$X$.
+\end{uwaga}
+
+\begin{stwierdzenie}
+	Ta liczba nie zależy od $f$.
+\end{stwierdzenie}
+
+\begin{fakt}
+	$0 \to G \xrightarrow i \Gamma \xrightarrow q H \to 0$,
+	to istnieje ${\varphi:H \to \mr{Aut}(G)}$ takie, że
+	${\Gamma \simeq G \rtimes_\varphi H}$ 
+	wtedy i~tylko wtedy, gdy istnieje $s:H \to \Gamma$ 
+	takie, że $q \circ s = \Id_H$.
+\end{fakt}
+
+\begin{przyklad}
+	$\Gamma_A = \Z^2 \rtimes_A \Z$, gdzie $A \in SL_2(\Z)$, 
+	$|\tr A| > 2$, $\Gamma_A \simeq \pi_1(M_A)$, gdzie
+	$M_A$ to $3$-wymiarowa Sol-rozmaitość.
+\end{przyklad}
+
+\begin{fakt}
+	$\pi_1(T_f) = \pi_1(X) \rtimes_{f^\ast} \Z$ (z~van Kampena).
+\end{fakt}
+
+\begin{uwaga}
+	$T_f$ lokalnie trywialne rozwłóknienie nad okręgiem z~włóknem $X$.
+\end{uwaga}
+
+\begin{twierdzenie}[Luck]
+	$X$ skończony kompleks, wówczas $\forall_i \beta_i(T_f) = 0$.
+\end{twierdzenie}
+
+\begin{lemat}
+	$T_f^n \simeq_{htp} T_{f^n}$
+\end{lemat}
+
+{\bf Twierdzenie Lucka o~aproksymacji}
+
+\begin{definicja}
+	$G$ jest rezydualnie skończona, 
+	jeśli istnieje rodzina podgrup $H_i \leq G$,
+	gdzie każda $H_i$ jest skończonego indeksu w~$G$, 
+	taka, że $\bigcap H_i = \{ e \}$.
+\end{definicja}
+
+\begin{przyklad}
+	$H_n = n \Z \leq \Z$
+\end{przyklad}
+
+\begin{uwaga}
+	Jeśli $G$ skończenie generowana,
+	to możemy założyć, że $H_i$ są normalne.
+\end{uwaga}
+
+\begin{wniosek}
+	Grupa $G$ jest rezydualnie skończona, jesli
+	$\forall_{g \in G}$ istnieje homomorfizm
+	${\varphi: G \to F}$, gdzie $F$ jest grupą skończoną
+	taką, że $\varphi(g) \neq e$.
+\end{wniosek}
+
+\begin{przyklad}
+	$GL_n(\Z)$, podgrupy $\ker \varphi_p$, gdzie 
+	$\varphi_p : GL_n(\Z) \to GL_n(\Z_p)$.
+\end{przyklad}
+
+\begin{przyklad}
+	$\mb{F}_n$ rezydualnie skończone: $\mb{F}_n 
+	\hookrightarrow \mb{F}_n
+	\hookrightarrow SL_2(\Z)
+	\hookrightarrow GL_n(\Z)$
+\end{przyklad}
+
+\begin{twierdzenie}[Malcer]
+	Skończenie generowana podgrupa $GL_n(R)$
+	dla $R$ pierścienia przemiennego z~$1$
+	jest rezydualnie skończona.
+\end{twierdzenie}
+
+\begin{przyklad}
+	$BS(m,n) = \langle a, b: a b^m a^{-1} = b^n \rangle$ dla $m, n \in \Z$.
+\end{przyklad}
+
+\begin{hipoteza}
+	Czy każda grupa hiperboliczna jest rezydualnie skończona?
+\end{hipoteza}
+
+\begin{twierdzenie}[Lucka o~aproksymacji]
+	Niech $X$-skończony kompleks o~grupie podstawowej $\pi_1(X)$
+	rezydualnie skończonej. Niech $\ldots \subset \Gamma_{m+1}
+	\subset \Gamma_m \subset \ldots \subset \pi_1(X) = \pi$
+	będzie zstępującym ciągiem normalnych podgrup skończonego indeksu,
+	$\bigcap \Gamma_m = \{ e \}$.
+	Niech $p_m : X_m \to X$ będzie skończonym nakryciem
+	stowarzyszonym z~$\Gamma_m$.
+	Wówczas $$\beta_i(X) 
+	= \lim_{m \to \infty} \frac{b_i(X_m)}{[\pi : \Gamma_m]}.$$
+\end{twierdzenie}
+
+{\bf Dalej jest dowód.}
+
+
+
+
+\end{document}

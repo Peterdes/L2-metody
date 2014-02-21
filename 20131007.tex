@@ -1,0 +1,285 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill $\ell_2$-metody w~topologii: 7 października 2013\hfill}
+ 
+\begin{document}
+
+\begin{definicja}[$n$-sympleks]
+	Najmniejszy wypukły zbiór w~$\R^m$ zawierający $n+1$ punktów nie leżących 
+	w~hiperprzestrzeni wymiaru $n-1$.
+	
+	Sympleks o~wierzchołkach $v_i$ oznaczamy $[v_0, \ldots, v_n]$.
+\end{definicja}
+
+\begin{definicja}[sympleks standardowy] 
+	$\Delta^n = [e_0, \ldots, e_n] $\\
+	$= \{ (t_0, \ldots, t_n) \in \R^{n+1} | \sum t_i = 1, t_i \geq 0 \}$.
+\end{definicja}
+
+\begin{uwaga}
+	Wierzchołki sympleksu są uporządkowane. 
+	Ustalenie porządku wyznacza kanoniczny liniowy homeomorfizm
+	sympleksu standardowego $\Delta^n$ z~dowolnym sympleksem
+	$[v_0, \ldots, v_n]$,
+	tj. $\Delta^n \owns (t_0, \ldots, t_n) \mapsto \sum t_i v_i$.
+\end{uwaga}
+
+\begin{uwaga}
+	Ściany dziedziczą porządek wierzchołków po sympleksie.
+\end{uwaga}
+
+\begin{definicja}[brzeg sympleksu]
+	Suma wyszystkich ścian sympleksu jest jego brzegiem $\partial \Delta^n$.
+\end{definicja}
+
+\begin{definicja}[otwarty sympleks]
+	$\osimp n = \simp n \setminus \partial \simp n$
+\end{definicja}
+
+\begin{definicja}[$\Delta$-kompleks]
+	Przestrzeń topologiczna $X$ ma strukturę $\Delta$-kompleksu, 
+	jeśli istnieje rodzina przekształceń $\sigma_\alpha: \Delta^{n_\alpha} \to X$
+	takich, że
+	\begin{itemize}
+ 		\item $\sigma_\alpha |_\osimp{n_\alpha}$ jest włożeniem
+ 		oraz każdy puinkt jest w~obrazie dokładnie jednego
+ 		z~przekształceń $\sigma_\alpha |_\osimp{n_\alpha}$,
+ 		\item dowolne obcięcie $\sigma_\alpha$ do ściany sympleksu 
+ 		jest jednym z~przekształceń $\sigma_\beta$,
+ 		\item zbiór $A \subseteq X$ jest otwarty wtw, gdy
+ 		$\sigma_\alpha^{-1}(A)$ jest otwarty w~$\simp n$ dla każdego
+ 		$\alpha$.
+	\end{itemize}
+
+\end{definicja}
+
+\begin{przyklad}
+	W~notatkach narysowany podział torusa na komórki.
+\end{przyklad}
+
+\begin{definicja}[$\Delta$-kompleks]
+	$\Delta$-kompleks $X$ jest przestrzenią ilorazową przestrzeni
+	$\bigsqcup \Delta_\alpha^n$, gdzie każdą ścianę $\Delta_\alpha^n$
+	identyfikujemy z~odpowiednim $\Delta_\beta^{n-1}$
+	odpowiadającym obcięciu ${\sigma_\beta = \sigma_\alpha |_{sciana}}$.
+\end{definicja}
+
+\begin{uwaga}
+	Możemy też konstruować $X$ indukcyjnie:
+	$X^{(0)}$ to dyskretny zbiór wierzchołków,
+	$X^{(1)}$ z~doklejonymi krawędziami itd.
+\end{uwaga}
+\pagebreak
+{\bf Homologie simplicjalne}
+$X$ to $\Delta$-kompleks, $G$ to grupa abelowa (domyślnie $\Z$).
+
+\begin{definicja}[$n$-łańcuchy]
+	$\Delta_n(X,G)$ to wolna grupa abelowa, 
+	której bazą są otwarte $n$-sympleksy $e_\alpha^n$ w~$X$:
+	$\Delta_n(X,G) 
+	= \left\{ \sum_{\alpha sk.} n_\alpha e_\alpha^n : n_\alpha \in G \right\}$.
+	
+	Jej elementy nazywamy $n$-łańcuchami.
+\end{definicja}
+
+\begin{uwaga}
+	$[v_0, \ldots, v_i, v_{i+1}, \ldots, v_n]
+	= - [v_0, \ldots, v_{i+1}, v_i, \ldots, v_n]$
+\end{uwaga}
+
+\begin{definicja}[brzeg]
+	$\partial [v_0, \ldots, v_n] 
+	= \sum (-1)^i [v_0, \ldots, \hat{v}_i, \ldots, v_n]$
+	
+	$\partial_n(\sigma_\alpha)
+	= \sum (-1)^i \sigma_\alpha |_{[v_0, \ldots, \hat{v}_i, \ldots, v_n]}$
+\end{definicja}
+
+\begin{lemat}
+	$\partial^2 = 0$
+\end{lemat}
+
+\begin{definicja}
+	Mamy {\em kompleks łańcuchowy} $\Delta(X,G)$, \\
+	$\ldots \to \Delta_n(X, G) \xrightarrow{\partial_n}
+	\Delta_{n-1}(X,G) \to \ldots \to \Delta_0(X,G) \to 0$.
+\end{definicja}
+
+\begin{definicja}[homologie simplicjalne]
+	$\displaystyle H_n^\Delta(X,G) = H_n(\Delta(X,G)) 
+	= \bigslant{\ker \partial_n}{\im \partial_{n+1}}$
+	
+	Elementy $\ker \partial_n$ nazywamy \emph{cyklami},
+	$\im \partial_{n+1}$ -- \emph{brzegami},
+	$H_n(X,G)$ -- \emph{klasami homologii}.
+\end{definicja}
+
+{\bf Homologie singularne}
+
+\begin{definicja}
+	$C_n(X,G)$ -- wolna grupa abelowa generowana przez 
+	zbiór singularnych $n$-sympleksów w~$X$ 
+	-- kompleks łańcuchowy singularny.
+	
+	$\partial_n(\sigma) 
+	= \sum(-1)^i \sigma|_{[v_0, \ldots, \hat{v}_i, \ldots, v_n]}$
+	
+	$\partial^2 = 0$
+	
+	$H_n(X,G) = \bigslant{\ker \partial_n}{\im \partial_{n+1}}$
+\end{definicja}
+
+\begin{uwaga}
+	Homologie singularne są szczególnym przypadkiem simplicjalnych
+	(wyjaśnienie w~notatkach).
+\end{uwaga}
+
+\begin{stwierdzenie}
+	$H_n(X) = \bigoplus_\alpha H_n(X_\alpha)$, 
+	gdzie $X_\alpha$ -- składowe łukowej spójności przestrzeni $X$.
+\end{stwierdzenie}
+
+\begin{stwierdzenie}
+	$H_0(X,G) = \bigoplus_\alpha G$, 
+	$\alpha$ indeksują składowe łukowej spójności przestrzeni $X$.
+\end{stwierdzenie}
+
+\begin{stwierdzenie}
+	$H_n(\ast, G) = \begin{cases} G & n = 0 \\ 0 & n \geq 1 \end{cases}$
+\end{stwierdzenie}
+
+\begin{definicja}[przekształcenie indukowane]
+	$f:X \to Y$ ciągłe indukuje ${f_\# : C_n(X,G) \to C_n(Y,G)}$
+	takie, że $\sigma \mapsto f \circ \sigma$.
+\end{definicja}
+
+\begin{lemat}
+	$F_\# \partial = \partial f_\#$
+\end{lemat}
+
+\begin{wniosek}
+	$f_\#$ przenosi brzegi na brzegi, cykle na cykle, czyli
+	$f$ indukuje ${f_\ast : H_n(X,G) \to H_n(Y,G)}$ dla każdego $n$.
+\end{wniosek}
+
+\begin{fakt}
+	$(fg)_\ast = f_\ast g_\ast$
+\end{fakt}
+
+\begin{fakt}
+	$\left(\mr{Id}_X\right)_\# = \mr{Id}_{H_n}$
+\end{fakt}
+
+\begin{twierdzenie}
+	$f \simeq_{htp} g : X \to Y \implies f_\ast = g_\ast$
+\end{twierdzenie}
+
+\begin{wniosek}
+	$X \simeq_{htp} Y \implies H_\ast(X, G) = H_\ast(Y,G)$
+\end{wniosek}
+
+\begin{twierdzenie}
+	$H_n^{sing} \simeq H_n^\Delta$
+\end{twierdzenie}
+
+\begin{definicja}[kompleksy]
+	$\ldots \to C_{n+1} \xrightarrow{\partial} C_n \to \ldots$ to kompleks łańcuchowy, \\
+	$\ldots \to C^{n+1} \xleftarrow{\delta} C^n \to \ldots$ to kompleks kołańcuchowy.
+	
+	Mając kompleks łańcuchowy $(C_n)$ możemy wziąć 
+	$C^n = \Hom(C_n, G) = C_n^\ast, \delta = \partial^\ast$.
+	
+	Wtedy też $\delta^2 = 0$.
+\end{definicja}
+
+\begin{definicja}[kompleks kołańcuchowy singularny]
+	$C^n(X,H) = \Hom(C_n(X,G), G)$
+	
+	$\displaystyle (\delta \varphi)(\sigma) 
+	= \sum_{i=0}^n (-1)^i \varphi
+	\left(\sigma|_{[v_0, \ldots, \hat{v}_i, \ldots, v_n]} \right)$
+\end{definicja}
+
+\begin{definicja}[kohomologie singularne]
+	$H^n(X,G) = \bigslant{\ker \delta}{\im \delta}$
+	
+	$\ker \delta$ to kocykle, $\im \delta$ to kobrzegi.
+\end{definicja}
+
+\begin{uwaga}
+	$\varphi \in C^n(X,G)$ kocykl, jeśli 
+	$0 = \delta \varphi = \varphi \delta$, 
+	czyli jeśli $\varphi$ znika na brzegach.
+\end{uwaga}
+
+\begin{uwaga}
+	Jeśli $X$ -- skończony $\Delta$-kompleks, 
+	to utożsamiamy $\Delta_n(X, \R)$ 
+	i~$\Hom(\Delta_n(X,\R), \R) = \Delta_n(X, \R)^\ast$.
+\end{uwaga}
+
+\begin{definicja}
+	$\Delta_n(X) = \Delta_n(X,\R)$, $\Delta^n(X) = \Delta^n(X,\R)$ etc.
+\end{definicja}
+
+
+{\bf Rozkład Hodge'a - de Rhama}
+
+$X$ skończony $\Delta$-kompleks,
+$\Delta^n(X, \R) \cong \R^{\beta_i}$ przestrzenie liniowe
+skończonego wymiaru nad $\R$ ($\beta_i$ -- liczba $n$-sympleksów)
+mają naturalny iloczyn skalarny
+
+\begin{definicja}
+	$\langle f, f' \rangle = \sum f(e_\alpha^n) f'(e_\alpha^n)$
+\end{definicja}
+
+\begin{stwierdzenie}
+	$\langle \delta_{i-1} x, y \rangle = \langle x, \partial_i y \rangle$
+	(de facto -- z~definicji)
+\end{stwierdzenie}
+
+\begin{wniosek}[równoważna definicja]
+	$\delta_{n-1} = \partial_n^\ast$
+	
+	$\Delta^n(X) \xleftrightharpoons[\partial_n]{\delta_{n-1} = \partial_n^\ast} \Delta^{n-1}(X)$
+\end{wniosek}
+
+\begin{wniosek}
+	$Z^i = \ker \delta_i = (\im \partial_{i+1})^\perp = B_i^\perp$
+	
+	$Z_i = \ker \partial_i = (\im \delta_{i-1})^\perp = {B^i}^\perp$
+	
+	$\Delta^i(X) = B^i \operp Z_i = B_i \operp Z^i$
+\end{wniosek}
+
+\begin{stwierdzenie}
+	$B^i \perp B_i$
+\end{stwierdzenie}
+
+\begin{twierdzenie}[rozkład H-dR]
+	$\Delta_i(X) = B^i \operp B_i \operp (Z^i \cap Z_i)$
+\end{twierdzenie}
+
+\begin{definicja}[harmoniczne kołańcuchy]
+	$\H_i(X) = Z_i(X) \cap Z^i(X)$
+\end{definicja}
+
+\begin{definicja}[laplasjan]
+	$\Delta_i = \partial_{i+1} \delta_i + \delta_{i-1} \partial_i 
+	: \Delta^i(X) \to \Delta^i(X)$
+\end{definicja}
+
+\begin{lemat}
+	$\H_i(X) = \ker \Delta_i$
+\end{lemat}
+
+
+
+\end{document}
+ 
+ 
+ 
+ 
+ 
+ 

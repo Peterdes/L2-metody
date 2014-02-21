@@ -1,0 +1,97 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill $\ell_2$-metody w~topologii: 20 stycznia 2014 \hfill}
+ 
+\begin{document}
+
+{\bf Kohomologie de Rhama} zostały przypomniane.
+I~struktura różniczkowa na rozmaitości.
+I~metryka Riemanna. I
+\begin{definicja}[gwiazdka Hodge'a]
+	$\ast: \Omega^k(M) \to \Omega^{n-k}(M)$, 
+	${\ast \ast = (-1)^{k(n-k)}}$,
+	${\alpha \wedge (\ast \alpha) = |\alpha^2| \mr{Vol}}$
+\end{definicja}
+
+\begin{definicja}[iloczyn skalarny na $\Omega^p(M)$]
+	$(\alpha, \beta) = \int_M \alpha \wedge (\ast \beta)$
+\end{definicja}
+
+\begin{definicja}
+	$\tilde{X}$ niezwarta rozmaitość Riemanna,
+	$\Gamma$ grupa działająca kozwarcie na $\tilde{X}$ przez
+	izometrie zachowujące orientację.
+	
+	Niech $A^{0,p} = A^{0,p}(\tilde{X})$ przestrzeń $L^2$-$p$-form
+	na $\tilde{X}$, ${A^{0,p} = \overline{A_0^p}^{\| \cdot \|_0}}$,
+	gdzie $A_0^p$ przestrzeń $C^\infty$ $p$-form na $\tilde{X}$
+	o~zwartym nośniku,
+	$\| \omega \|_0^2 = (\omega, \omega)_0 
+	= {\int_{\tilde{X}} \omega \wedge (\ast \omega)}$
+\end{definicja}
+
+\begin{stwierdzenie}
+	$A^{0,p}$ jest przestrzenią Hilberta z~iloczynem skalarnym
+	$(\cdot, \cdot)_0$ i~ma rozkład Hodge'a:
+	$$A^{0,p} = \overline{d A_0^{p-1}} \oplus \H^p \oplus 
+	\overline{d^\ast A_0^{p+1}},$$
+	gdzie $\H^p = \{ \omega: d \omega = d^\ast \omega = 0\}$ 
+	to przestrzeń form harmonicznych.
+\end{stwierdzenie}
+
+\begin{definicja}[$L^2$-kohomologie de Rhama]
+	$H_{dR(2)}^p(\tilde{X}) = \bigslant{\ker d}{\overline{\im d}}$
+\end{definicja}
+
+\begin{twierdzenie}[Dodziuk 1977]
+	Całkowanie form różniczkowych po sympleksach indukuje
+	$\Gamma$-izomorfizm $\int: \H^p(\tilde{X} 
+	\to \bar{H}_{(2)}^p(\tilde{X})$.
+\end{twierdzenie}
+
+\begin{definicja}
+	$A^{k,p} = \{ \omega \in A^{0,p} : (\Id + \Delta)^k \omega
+	\in A^{0,p} \}$, gdzie $\Delta = d d^\ast + d^\ast d$
+	-- odpowiednik przestrzeni Soboleva.
+\end{definicja}
+
+\begin{stwierdzenie}[Atiyah]
+	Dla każdego $k \geq 0$, $0 \leq p \leq \dim X$, przestrzeń
+	$A^{k,p}$ jest uzupełnieniem $A_0^p$ względem normy
+	${\|\omega \|_k^2} = {\| (\Id+\Delta)^k \omega \|_0^2}$,
+	$\omega \in A_0^p$, oraz $(\Id+\Delta)^k$ jest samosprzężonym
+	operatorem na $A^{0,p}$ z~dziedziną $A^{k,p}$.
+\end{stwierdzenie}
+
+\begin{lemat}
+	Operator $(\Id + \Delta)^k$ jest izomorfizmem przestrzeni Hilberta
+	$A^{k,p}$ i~$A^{0,p}$.
+\end{lemat}
+
+\begin{lemat}
+	$L^2$-formy harmoniczne na $\tilde{X}$ są zamknięte
+	i~kozamknięte,
+	
+	$\H^p(\tilde{X}) = \{ \omega \in A^{0,p} : \Delta \omega = 0 \}
+	= \{ \omega \in A^{0,p}: d \omega = d^\ast \omega = 0 \}$.
+	
+	Ponadto $Z^p(\tilde{X}) = \ker d$ może być zapisane jako
+	
+	$Z^p(\tilde{X}) = \H^p(\tilde{X}) \oplus 
+	\overline{B^p(\tilde{X})}$,
+	
+	dlatego $\H^p(\tilde{X})$ jest $\Gamma$-izomorficzne
+	z~$\bar{H}^p(\tilde{X}) = \bigslant{Z^p}{\overline{B^p}}$.
+\end{lemat}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,143 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill $\ell_2$-metody w~topologii: 21 października 2013\hfill}
+ 
+\begin{document}
+
+\begin{uwaga}[gwoli uzupełnienia]
+	$H^i_G(Y, \ell_2(G)) = \bigslant{Z^i(Y)}{B^i(Y)}$
+	
+	$\bar{H}^n(Y) = \bigslant{Z^i(Y)}{\bar{B}^i(Y)} \simeq 
+	\H_n(Y) = \ker \Delta_n$
+\end{uwaga}
+
+{\bf Moduły Hilbertowskie}
+
+\begin{definicja}[$G$-moduł Hilbertowski]
+	$M$ przestrzeń Hilberta nazywa się \emph{$G$-modułem Hilbertowskim},
+	jeśli $M$ jest wyposażona w~reprezentację unitarną grupy $G$,
+	$\pi:G \to U(M)$, taką, że $M$ jest izometrycznie $G$-izomorficzna
+	z~domkniętą $G$-niezmienniczą podprzestrzenią $(\ell_2(G))^n$
+	(istnieje $V \subseteq (\ell_2(G))^n$ domknięta, $T:M \to V$ 
+	liniowa izometria, $T \pi_g = \lambda_g T$.
+\end{definicja}
+
+\begin{lemat}
+	$\delta_i \lambda_g = \lambda_g \delta_i$
+\end{lemat}
+
+
+\begin{fakt}
+	$C_i(Y) \simeq (\ell_2(G))^{\alpha_i}$ jest $G$-modułem Hilbertowskim.
+	
+	$Z^i(Y), Z_i(Y)$ są $G$-modułami Hilbertowskimi.
+	
+	$\bar{B}_i(Y), \bar{B}^i(Y)$ są $G$-modułami Hilbertowskimi.
+\end{fakt}
+
+\begin{wniosek}
+	$\H_i(Y)$ jest $G$-modułem Hilbertowskim.
+\end{wniosek}
+
+\begin{lemat}
+	$M$ -- $G$-moduł Hilbertowski, 
+	$V \subseteq M$ to $G$-niezmiennicza podprzestrzeń $M$,
+	wówczas $\bigslant M {\bar{V}}$
+	z~normą $\| w \| = \inf \{ \| \tilde{w} \| : \pi(\tilde{w}) = w \}$
+	ma naturalną strukturę $G$-modułu Hilbertowskiego.
+\end{lemat}
+
+\begin{lemat}
+	Jeśli $\bar{V} \subseteq M$ jest $G$-niezmiennicza,
+	to $\bar{V}^\perp$ jest $G$-niezmiennicze.
+\end{lemat}
+
+\begin{definicja}[izomorfizmy]
+	$f:M_1 \to M_2$ przekształcenie $G$-modułów Hilbertowskich jest
+	\begin{itemize}
+		\item \emph{słabym izomorfizmem}, jeśli jest injekcją,
+		ograniczone, $G$-ekwiwariantne, 
+		oraz $\im f$ jest gęste w~$M_2$;
+		\item \emph{silnym izomorfizmem}, jeśli jest
+		$G$-ekwiwariantną izometrią $M_1$ i~$M_2$.
+	\end{itemize}
+\end{definicja}
+
+\begin{lemat}
+	Załóżmy, że istnieje słaby izomorfizm $G$-modułów Hilbertowskich
+	$M_1 \to M_2$. Wtedy istnieje silny izomorfizm $M_1$ i~$M_2$.
+\end{lemat}
+
+\begin{uwaga}
+	$T:H_1 \to H_2$, $\im T$ gęsty w~$H_2$ wtw, 
+	gdy $T^\ast$ jest injekcją, bo $(\im T)^\perp = \ker T^\ast$.
+\end{uwaga}
+
+\begin{twierdzenie}[spektralne]
+	$T \in \mc{B}(H)$ dodatni samosprzężony, 
+	to istnieje $S \in \mc{B}(H)$ dodatni samosprzężony taki, że
+	$S^2 = T$, co więcej $S$ jest przemienny z~każdym operatorem, 
+	z~którym przemienny jest $T$.
+\end{twierdzenie}
+
+\begin{definicja}[izomorficzne $G$-moduły]
+	$M_1, M_2$ -- $G$-moduły Hilbertowskie są \emph{izomorficzne},
+	jeśli istnieje słaby (lub równoważnie -- silny) izomorfizm
+	$f : M_1 \to M_2$.
+\end{definicja}
+
+\begin{wniosek}
+	$\varphi: M_1 \to M_2$ ograniczone $G$-ekwiwariantne
+	przekształcenie $G$-modułów Hilbertowskich,
+	wówczas $(\ker \varphi) ^\perp 
+	\simeq \bigslant{M_1}{\ker \varphi} \simeq \overline{\im \varphi}$
+	jako $G$-moduły Hilbertowskie.
+\end{wniosek}
+\pagebreak 
+\begin{twierdzenie}
+	$\H_i$ jest funktorem z~kategorii $\Delta$-kompleksów
+	z~wolnym kozwartym działaniem $G$ i~klas $G$-homotopii
+	przekształceń do kategorii $G$-modułów Hilbertowskich
+	i~ograniczonych $G$-ekwiwariantnych operatorów.
+\end{twierdzenie}
+
+\begin{twierdzenie}[o~aproksymacji symplicjalnej]
+	Niech $K$ -- skończony $\Delta$-kompleks, 
+	$L$ -- dowolny $\Delta$-kompleks.
+	Wówczas przekształcenie $f:K \to L$ jest homotopijne
+	z~przekształceniem symplicjalnym $f':K' \to L$,
+	gdzie $K'$ jest pewnym podpodziałem barycentrycznym $K$.
+\end{twierdzenie}
+
+\begin{definicja}
+	Przekształcenie symplicjalne przekształca sympleksy na sympleksy 
+	i~jest liniowe w~obcięciu do wnętrza każdego sympleksu.
+\end{definicja}
+
+\begin{lemat}
+	W~$(\ell_2(G))^n$ nie ma $G$-niezmienniczych niezerowych wektorów, jeśli $|G| = \infty$.
+\end{lemat}
+
+\begin{przyklad}
+	$Y$ -- spójny $G$-$\Delta$-kompleks z~kozwartym $1$-szkieletem,
+	$G$ nieskończona, wtedy $\H_0(Y) = 0$.
+\end{przyklad}
+
+\begin{przyklad}
+	Dla $Y = \R, G = \Z, X = S^1$ 
+	mamy $\H_0(Y) = 0 \neq H_0^G(Y, \ell_2(G))$.
+\end{przyklad}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
